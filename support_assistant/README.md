@@ -58,3 +58,50 @@ Then POST to `http://127.0.0.1:7860/ask`.
 
 ## Optional real LLM
 Set `MOCK_LLM=0` and provide `GROQ_API_KEY` without committing it. The real path uses the structured prompt and retries invalid JSON up to two additional times. This extension is not required for grading.
+
+## Example API Calls
+
+### 1. Policy retrieval example
+
+Request:
+
+```json
+{
+  "query": "How can I track my order?"
+}
+```
+Response:
+
+```json
+{
+  "answer": "Based on the retrieved context: Every Zepto order shows a live rider-tracking map from the moment it is packed until delivery, accessible from the 'Track Order' screen. Estimated delivery time updates automatically as the rider move",
+  "sources": [
+    "doc_04_chunk_0",
+    "doc_06_chunk_0",
+    "doc_01_chunk_0"
+  ],
+  "confidence": 1.0
+}
+```
+This query is classified as `policy_question` and routed to `retrieve_and_answer`.
+
+### 2. General-question example
+
+Request:
+
+```json
+{
+  "query": "What is the capital of France?"
+}
+```
+Response:
+
+```json
+{
+  "answer": "I can only answer questions about Zepto policies right now.",
+  "sources": [],
+  "confidence": 1.0
+}
+```
+This query is classified as `general_question` and routed to `direct_answer`.
+
