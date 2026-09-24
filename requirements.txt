@@ -16,3 +16,4 @@ langchain-core
 fastapi
 uvicorn[standard]
 pydantic
+tabulate
