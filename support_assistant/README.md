@@ -51,8 +51,8 @@ Record the exact JSON returned by your local run in this README before submissio
 ## Docker
 From the repository root:
 ```bash
-docker build -f support_assistant/Dockerfile -t zepto-support .
-docker run --rm -p 7860:7860 -e MOCK_LLM=1 zepto-support
+docker build -f support_assistant/Dockerfile -t zepto-support-assistant .
+docker run --rm -p 7860:7860 -e MOCK_LLM=1 zepto-support-assistant
 ```
 Then POST to `http://127.0.0.1:7860/ask`.
 
