@@ -64,3 +64,7 @@ git log --graph --oneline --all
 ## Submission checklist
 
 Before publishing, run all three modules and commit the generated required artifacts: `data_pipeline/zepto_books.db` (or regeneration script), `data_pipeline/books_clean.csv`, SQL outputs, `analytics/titanic.csv`, EDA/model results, charts, `analytics/best_pipeline.joblib`, the ChromaDB data if desired, and the support-assistant example JSON transcripts. Do not add screenshots, PDFs, slides, audio or video.
+
+## Project Status
+
+All three capstone modules have been implemented and tested locally. The Support Assistant API has also been validated using Docker.
